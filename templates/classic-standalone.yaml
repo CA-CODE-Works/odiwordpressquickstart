@@ -11,13 +11,7 @@ metadata:
     iconClass: icon-php
     openshift.io/display-name: WordPress (Classic / Standalone)
     tags: 'quickstart,php,wordpress'
-  creationTimestamp: '2018-09-18T23:34:25Z'
   name: wordpress-classic-standalone
-  namespace: willbunkertest
-  resourceVersion: '6285447'
-  selfLink: >-
-    /apis/template.openshift.io/v1/namespaces/willbunkertest/templates/wordpress-classic-standalone
-  uid: 61180dce-bb9b-11e8-8380-005056b56b06
 objects:
   - apiVersion: v1
     kind: ImageStream

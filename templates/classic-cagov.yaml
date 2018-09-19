@@ -10,9 +10,9 @@ metadata:
       be scaled to multiple replicas and the deployment strategy switched to
       Rolling to permit rolling deployments on restarts.
     iconClass: icon-php
-    openshift.io/display-name: WordPress (Classic / Repository)
+    openshift.io/display-name: WordPress (Classic / CA template)
     tags: 'quickstart,php,wordpress'
-  name: wordpress-classic-repository
+  name: wordpress-classic-cagov
 objects:
   - apiVersion: v1
     kind: ImageStream
@@ -78,8 +78,10 @@ objects:
           name: '${APPLICATION_NAME}-img:latest'
       source:
         git:
-          ref: '${SOURCE_REPOSITORY_TAG}'
-          uri: '${SOURCE_REPOSITORY_URL}'
+          ref: 'master'
+          uri: 'https://github.com/Wbunker/samplewordpresscontent'
+        sourceSecret:
+          name: "wordpresstemplate-github"
         type: Git
       strategy:
         sourceStrategy:
@@ -324,13 +326,6 @@ parameters:
     name: WORDPRESS_INSTALL_VERSION
     required: true
     value: 4.9.2
-  - description: 'The source repository containing plugins, themes and language files.'
-    name: SOURCE_REPOSITORY_URL
-    required: true
-  - description: The tagged version of the source repository to use.
-    name: SOURCE_REPOSITORY_TAG
-    required: true
-    value: master
   - description: Size of the persistent volume for Wordpress.
     name: WORDPRESS_VOLUME_SIZE
     required: true
