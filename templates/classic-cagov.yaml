@@ -1,0 +1,39 @@
+
+Using project "developmentblockcert".
+Shamals-MacBook-Pro:blockchain_certificates shamalsiwan$ oc get quota
+NAME          AGE
+burst-quota   7d
+quota         7d
+Shamals-MacBook-Pro:blockchain_certificates shamalsiwan$ oc get quota quota 
+NAME      AGE
+quota     7d
+Shamals-MacBook-Pro:blockchain_certificates shamalsiwan$ oc get quota quota -o yaml
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  annotations:
+    openshift.io/quota-tier: Small
+  creationTimestamp: 2018-09-11T23:10:42Z
+  labels:
+    quota-tier: Small
+  name: quota
+  namespace: developmentblockcert
+  resourceVersion: "6439728"
+  selfLink: /api/v1/namespaces/developmentblockcert/resourcequotas/quota
+  uid: e7c870b5-b617-11e8-a57c-005056b57c09
+spec:
+  hard:
+    cpu: "1"
+    memory: 2Gi
+  scopes:
+  - NotTerminating
+status:
+  hard:
+    cpu: "1"
+    memory: 2Gi
+  used:
+    cpu: 150m
+    memory: 768Mi
+Shamals-MacBook-Pro:blockchain_certificates shamalsiwan$ oc edit quota quota
+Edit cancelled, no changes made.
+Shamals-MacBook-Pro:blockchain_certificates shamalsiwan$ 
