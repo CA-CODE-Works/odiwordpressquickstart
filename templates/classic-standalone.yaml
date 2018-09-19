@@ -53,6 +53,9 @@ objects:
         type: Git
       strategy:
         sourceStrategy:
+          env:
+            - name: WORDPRESS_INSTALL_VERSION
+              value: '${WORDPRESS_INSTALL_VERSION}'
           from:
             kind: ImageStreamTag
             name: 'php:${PHP_VERSION}'
@@ -290,11 +293,11 @@ parameters:
   - description: The URL of the quickstart Git repository.
     name: QUICKSTART_REPOSITORY_URL
     required: true
-    value: 'https://github.com/openshift-evangelists/wordpress-quickstart'
+    value: 'https://github.com/Wbunker/wordpress-quickstart'
   - description: Version of WordPress to use
-    name: WORDPRESS_VOLUME_SIZE
+    name: WORDPRESS_INSTALL_VERSION
     required: true
-    value: 1Gi
+    value: 4.9.2
   - description: Size of the persistent volume for Wordpress.
     name: WORDPRESS_VOLUME_SIZE
     required: true
