@@ -291,6 +291,10 @@ parameters:
     name: QUICKSTART_REPOSITORY_URL
     required: true
     value: 'https://github.com/openshift-evangelists/wordpress-quickstart'
+  - description: Version of WordPress to use
+    name: WORDPRESS_VOLUME_SIZE
+    required: true
+    value: 1Gi
   - description: Size of the persistent volume for Wordpress.
     name: WORDPRESS_VOLUME_SIZE
     required: true
