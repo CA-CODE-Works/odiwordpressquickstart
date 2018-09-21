@@ -23,3 +23,8 @@ mv /tmp/src/languages /opt/app-root/downloads/languages
 mv /tmp/src/configs /opt/app-root/downloads/configs
 
 rm -rf /tmp/src
+
+# Download WP-CLI
+wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp

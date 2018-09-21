@@ -318,6 +318,17 @@ parameters:
     name: APPLICATION_NAME
     required: true
     value: my-wordpress-site
+  - description: The name of WordPress user.
+    from: 'user[a-f0-9]{8}'
+    generate: expression
+    name: WORDPRESS_USERNAME
+  - description: The password for the WordPress user.
+    from: '[a-zA-Z0-9]{12}'
+    generate: expression
+    name: WORDPRESS_PASSWORD
+  - description: The email for the WordPress user.
+    required: true
+    name: WORDPRESS_EMAIL    
   - description: The URL of the quickstart Git repository.
     name: QUICKSTART_REPOSITORY_URL
     required: true
@@ -341,7 +352,7 @@ parameters:
   - description: Amount of memory available to WordPress.
     name: WORDPRESS_MEMORY_LIMIT
     required: true
-    value: 512Mi
+    value: 1024Mi
   - description: Size of the persistent volume for the database.
     name: DATABASE_VOLUME_SIZE
     required: true
