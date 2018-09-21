@@ -55,6 +55,16 @@ if [ ! -f wp-config.php ]; then
     sed -i "s/'NONCE_SALT', *'put your unique phrase here'/'NONCE_SALT', '`secret`'/" $TMPCONFIG
 
     mv $TMPCONFIG wp-config.php
+
+
+    # Install the WordPress database.
+    wp core install --path="/opt/app-root" --url="$MYSQL_HOST" --title="${APPLICATION_NAME}" --admin_user="${WORDPRESS_USERNAME}" --admin_password="${WORDPRESS_PASSWORD}" --admin_email="${WORDPRESS_EMAIL}"
+
+
+    # Install CAWeb Theme and activate it
+    wp theme activate CAWeb
+
+
 fi
 
 # Copy user provided plugins, themes, language files and configuration
