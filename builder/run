@@ -58,11 +58,11 @@ if [ ! -f wp-config.php ]; then
 
 
     # Install the WordPress database.
-    wp core install --path="/opt/app-root" --url="$MYSQL_HOST" --title="${APPLICATION_NAME}" --admin_user="${WORDPRESS_USERNAME}" --admin_password="${WORDPRESS_PASSWORD}" --admin_email="${WORDPRESS_EMAIL}"
+    /tmp/bin/wp core install --path="/opt/app-root" --url="$MYSQL_HOST" --title="${APPLICATION_NAME}" --admin_user="${WORDPRESS_USERNAME}" --admin_password="${WORDPRESS_PASSWORD}" --admin_email="${WORDPRESS_EMAIL}"
 
 
     # Install CAWeb Theme and activate it
-    wp theme activate CAWeb
+    /tmp/bin/wp theme activate CAWeb
 
 
 fi
