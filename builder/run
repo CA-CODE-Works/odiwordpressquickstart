@@ -60,22 +60,6 @@ if [ ! -f wp-config.php ]; then
 
 fi
 
-if [ ! -f .ransetup ]; then
-  echo "In run setup branch"
-
-  # Install the WordPress database.
-  echo "Installing WordPress database"
-  /tmp/bin/wp core install --path="./" --url="$MYSQL_HOST" --title="$APPLICATION_NAME" --admin_user="$WORDPRESS_USERNAME" --admin_password="$WORDPRESS_PASSWORD" --admin_email="$WORDPRESS_EMAIL"
-
-
-  # Install CAWeb Theme and activate it
-  echo "Installing CAWeb Theme"
-  /tmp/bin/wp theme activate CAWeb
-
-  touch .ransetup
-
-fi
-
 
 # Copy user provided plugins, themes, language files and configuration
 # files into the persistent volume. This happens every time the image is
@@ -149,6 +133,26 @@ Alias /webdav/ /opt/app-root/src/
 !
     fi
 fi
+
+#install the themes and user/database for wordpress
+if [ ! -f .ransetup ]; then
+  echo "In run setup branch"
+
+  # Install the WordPress database.
+  echo "Installing WordPress database"
+  /tmp/bin/wp core install --path="./" --url="$MYSQL_HOST" --title="$APPLICATION_NAME" --admin_user="$WORDPRESS_USERNAME" --admin_password="$WORDPRESS_PASSWORD" --admin_email="$WORDPRESS_EMAIL"
+
+
+  # Install CAWeb Theme and activate it
+  echo "Installing CAWeb Theme"
+  /tmp/bin/wp theme activate CAWeb
+
+  touch .ransetup
+
+fi
+
+
+
 
 # Execute the original run script, replacing this script as current process.
 
