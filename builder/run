@@ -143,9 +143,12 @@ if [ ! -f .ransetup ]; then
   /tmp/bin/wp core install --path="./" --url="$MYSQL_HOST" --title="$APPLICATION_NAME" --admin_user="$WORDPRESS_USERNAME" --admin_password="$WORDPRESS_PASSWORD" --admin_email="$WORDPRESS_EMAIL"
 
 
-  # Install CAWeb Theme and activate it
-  echo "Installing CAWeb Theme"
-  /tmp/bin/wp theme activate CAWeb
+  #if CAWeb theme is available install
+  if [ -f ./wp-content/themes/CAWeb ]; then
+    # Install CAWeb Theme and activate it
+    echo "Installing CAWeb Theme"
+    /tmp/bin/wp theme activate CAWeb
+  fi
 
   touch .ransetup
 
