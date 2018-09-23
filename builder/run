@@ -65,7 +65,7 @@ if [ ! -f .ransetup ]; then
 
   # Install the WordPress database.
   echo "Installing WordPress database"
-  /tmp/bin/wp core install --path="/opt/app-root" --url="$MYSQL_HOST" --title="${APPLICATION_NAME}" --admin_user="${WORDPRESS_USERNAME}" --admin_password="${WORDPRESS_PASSWORD}" --admin_email="${WORDPRESS_EMAIL}"
+  /tmp/bin/wp core install --path="./" --url="$MYSQL_HOST" --title="${APPLICATION_NAME}" --admin_user="${WORDPRESS_USERNAME}" --admin_password="${WORDPRESS_PASSWORD}" --admin_email="${WORDPRESS_EMAIL}"
 
 
   # Install CAWeb Theme and activate it
