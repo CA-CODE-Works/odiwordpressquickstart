@@ -130,7 +130,7 @@ objects:
                 - name: WORDPRESS_EMAIL
                   value: '${WORDPRESS_EMAIL}'
                 - name: WORDPRESSHOSTNAME
-                  value: '${WORDPRESSHOSTNAME}'
+                  value: "https://{.spec.host}{.spec.path}"
               image: '${APPLICATION_NAME}-img'
               livenessProbe:
                 failureThreshold: 3
