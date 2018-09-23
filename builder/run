@@ -4,9 +4,12 @@ set -x
 
 set -eo pipefail
 
-# If WordPress has not been installed yet, unpack it.
+echo "Beginning run"
 
+# If WordPress has not been installed yet, unpack it.
 if [ ! -f wp-config-sample.php ]; then
+    echo "In config sample branch"
+
     tar --strip-components=1 -xzf /opt/app-root/downloads/wordpress.tar.gz
 
     # Edit the wp-config-sample.php to allow plugins and themes to be
