@@ -123,6 +123,12 @@ objects:
                   value: '${APPLICATION_NAME}-db'
                 - name: MYSQL_TABLE_PREFIX
                   value: wp_
+                - name: WORDPRESS_USERNAME
+                  value: '${WORDPRESS_USERNAME}'
+                - name: WORDPRESS_PASSWORD
+                  value: '${WORDPRESS_PASSWORD}'
+                - name: WORDPRESS_EMAIL
+                  value: '${WORDPRESS_EMAIL}'                  
               image: '${APPLICATION_NAME}-img'
               livenessProbe:
                 failureThreshold: 3
@@ -328,7 +334,7 @@ parameters:
     name: WORDPRESS_PASSWORD
   - description: The email for the WordPress user.
     required: true
-    name: WORDPRESS_EMAIL    
+    name: WORDPRESS_EMAIL
   - description: The URL of the quickstart Git repository.
     name: QUICKSTART_REPOSITORY_URL
     required: true
