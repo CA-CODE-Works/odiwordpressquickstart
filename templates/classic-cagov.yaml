@@ -284,8 +284,6 @@ objects:
     metadata:
       labels:
         app: '${APPLICATION_NAME}'
-      annotations:
-        template.openshift.io/expose-WORDPRESSHOSTNAME: "https://{.spec.host}{.spec.path}"
       name: '${APPLICATION_NAME}'
     spec:
       host: ''
