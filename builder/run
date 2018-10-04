@@ -150,6 +150,8 @@ if [ ! -f .ransetup ]; then
    /tmp/bin/wp theme activate CAWeb
   fi
 
+  #add additional customization to install page content
+
   touch .ransetup
 
 fi
