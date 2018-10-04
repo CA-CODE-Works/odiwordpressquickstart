@@ -79,7 +79,7 @@ objects:
       source:
         git:
           ref: 'master'
-          uri: 'https://github.com/Wbunker/samplewordpresscontent'
+          uri: 'https://gitlab.com/castate/odiwordpress'
         type: Git
       strategy:
         sourceStrategy:
@@ -341,7 +341,7 @@ parameters:
   - description: The URL of the quickstart Git repository.
     name: QUICKSTART_REPOSITORY_URL
     required: true
-    value: 'https://github.com/Wbunker/wordpress-quickstart'
+    value: 'https://github.com/CA-CODE-Works/odiwordpressquickstart'
   - description: Version of WordPress to use
     name: WORDPRESS_INSTALL_VERSION
     required: true
@@ -361,7 +361,7 @@ parameters:
   - description: Amount of memory available to WordPress.
     name: WORDPRESS_MEMORY_LIMIT
     required: true
-    value: 1024Mi
+    value: 512Mi
   - description: Size of the persistent volume for the database.
     name: DATABASE_VOLUME_SIZE
     required: true
