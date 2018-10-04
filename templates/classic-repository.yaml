@@ -12,13 +12,7 @@ metadata:
     iconClass: icon-php
     openshift.io/display-name: WordPress (Classic / Repository)
     tags: 'quickstart,php,wordpress'
-  creationTimestamp: '2018-09-18T23:34:16Z'
   name: wordpress-classic-repository
-  namespace: willbunkertest
-  resourceVersion: '6285419'
-  selfLink: >-
-    /apis/template.openshift.io/v1/namespaces/willbunkertest/templates/wordpress-classic-repository
-  uid: 5bd589ac-bb9b-11e8-bb44-005056b57c09
 objects:
   - apiVersion: v1
     kind: ImageStream
@@ -326,13 +320,13 @@ parameters:
     name: QUICKSTART_REPOSITORY_URL
     required: true
     value: 'https://github.com/Wbunker/wordpress-quickstart'
-  - description: 'The source repository containing plugins, themes and language files.'
-    name: SOURCE_REPOSITORY_URL
-    required: true
   - description: Version of WordPress to use
     name: WORDPRESS_INSTALL_VERSION
     required: true
     value: 4.9.2
+  - description: 'The source repository containing plugins, themes and language files.'
+    name: SOURCE_REPOSITORY_URL
+    required: true
   - description: The tagged version of the source repository to use.
     name: SOURCE_REPOSITORY_TAG
     required: true

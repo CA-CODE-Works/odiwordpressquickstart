@@ -16,6 +16,7 @@ mkdir -p /tmp/src/plugins
 mkdir -p /tmp/src/themes
 mkdir -p /tmp/src/languages
 mkdir -p /tmp/src/configs
+mkdir -p /tmp/bin
 
 mv /tmp/src/plugins /opt/app-root/downloads/plugins
 mv /tmp/src/themes /opt/app-root/downloads/themes
@@ -23,3 +24,8 @@ mv /tmp/src/languages /opt/app-root/downloads/languages
 mv /tmp/src/configs /opt/app-root/downloads/configs
 
 rm -rf /tmp/src
+
+# Download WP-CLI
+wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+chmod +x wp-cli.phar
+mv wp-cli.phar /tmp/bin/wp

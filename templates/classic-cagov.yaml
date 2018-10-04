@@ -80,8 +80,6 @@ objects:
         git:
           ref: 'master'
           uri: 'https://gitlab.com/castate/odiwordpress'
-        sourceSecret:
-          name: "odiwordpresstemplategithubgitlab"
         type: Git
       strategy:
         sourceStrategy:
@@ -123,6 +121,14 @@ objects:
                   value: '${APPLICATION_NAME}-db'
                 - name: MYSQL_TABLE_PREFIX
                   value: wp_
+                - name: WORDPRESS_USERNAME
+                  value: '${WORDPRESS_USERNAME}'
+                - name: WORDPRESS_PASSWORD
+                  value: '${WORDPRESS_PASSWORD}'
+                - name: WORDPRESS_EMAIL
+                  value: '${WORDPRESS_EMAIL}'
+                - name: WORDPRESSHOSTNAME
+                  value: "https://${APPLICATION_NAME}-${PROJECT_NAME}.apps.ocp.innovate.ca.gov"
               image: '${APPLICATION_NAME}-img'
               livenessProbe:
                 failureThreshold: 3
@@ -318,6 +324,20 @@ parameters:
     name: APPLICATION_NAME
     required: true
     value: my-wordpress-site
+  - description: The project you are starting this in.
+    name: PROJECT_NAME
+    required: true
+  - description: The name of WordPress user.
+    from: 'user[a-f0-9]{8}'
+    generate: expression
+    name: WORDPRESS_USERNAME
+  - description: The password for the WordPress user.
+    from: '[a-zA-Z0-9]{12}'
+    generate: expression
+    name: WORDPRESS_PASSWORD
+  - description: The email for the WordPress user.
+    required: true
+    name: WORDPRESS_EMAIL
   - description: The URL of the quickstart Git repository.
     name: QUICKSTART_REPOSITORY_URL
     required: true
