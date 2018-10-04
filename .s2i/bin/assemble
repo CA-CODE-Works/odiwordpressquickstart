@@ -22,8 +22,10 @@ fi
 mkdir -p /opt/app-root/downloads
 
 if [ "$WORDPRESS_INSTALL_VERSION" = "latest" ]; then
+  echo "pulling latests"
   curl -Ls http://wordpress.org/latest.tar.gz > /opt/app-root/downloads/wordpress.tar.gz
 else
+  echo "pulling version $WORDPRESS_INSTALL_VERSION"
   curl -Ls http://wordpress.org/wordpress-${WORDPRESS_INSTALL_VERSION}.tar.gz > /opt/app-root/downloads/wordpress.tar.gz
 fi
 
