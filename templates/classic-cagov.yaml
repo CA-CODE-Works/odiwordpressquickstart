@@ -345,7 +345,7 @@ parameters:
   - description: Version of WordPress to use
     name: WORDPRESS_INSTALL_VERSION
     required: true
-    value: latest
+    value: 4.9.2
   - description: Size of the persistent volume for Wordpress.
     name: WORDPRESS_VOLUME_SIZE
     required: true
