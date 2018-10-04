@@ -21,7 +21,12 @@ fi
 
 mkdir -p /opt/app-root/downloads
 
-curl -Ls http://wordpress.org/wordpress-${WORDPRESS_INSTALL_VERSION}.tar.gz > /opt/app-root/downloads/wordpress.tar.gz
+if [ "$WORDPRESS_INSTALL_VERSION" = "latest" ]; then
+  curl -Ls http://wordpress.org/latest.tar.gz > /opt/app-root/downloads/wordpress.tar.gz
+else
+  curl -Ls http://wordpress.org/wordpress-${WORDPRESS_INSTALL_VERSION}.tar.gz > /opt/app-root/downloads/wordpress.tar.gz
+fi
+
 echo ${WORDPRESS_INSTALL_VERSION} > /opt/app-root/downloads/wordpress-version.txt
 
 # Verify the WordPress sources.

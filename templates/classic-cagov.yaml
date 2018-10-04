@@ -80,8 +80,6 @@ objects:
         git:
           ref: 'master'
           uri: 'https://github.com/Wbunker/samplewordpresscontent'
-        sourceSecret:
-          name: "wordpresstemplate-github"
         type: Git
       strategy:
         sourceStrategy:
@@ -347,7 +345,7 @@ parameters:
   - description: Version of WordPress to use
     name: WORDPRESS_INSTALL_VERSION
     required: true
-    value: 4.9.2
+    value: latest
   - description: Size of the persistent volume for Wordpress.
     name: WORDPRESS_VOLUME_SIZE
     required: true
