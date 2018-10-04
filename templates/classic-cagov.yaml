@@ -130,7 +130,7 @@ objects:
                 - name: WORDPRESS_EMAIL
                   value: '${WORDPRESS_EMAIL}'
                 - name: WORDPRESSHOSTNAME
-                  value: "https://{.spec.host}{.spec.path}"
+                  value: "https://${APPLICATION_NAME}-${PROJECT_NAME}.apps.ocp.innovate.ca.gov"
               image: '${APPLICATION_NAME}-img'
               livenessProbe:
                 failureThreshold: 3
@@ -326,6 +326,9 @@ parameters:
     name: APPLICATION_NAME
     required: true
     value: my-wordpress-site
+  - description: The project you are starting this in.
+    name: PROJECT_NAME
+    required: true
   - description: The name of WordPress user.
     from: 'user[a-f0-9]{8}'
     generate: expression

@@ -140,15 +140,15 @@ if [ ! -f .ransetup ]; then
 
   # Install the WordPress database.
   echo "Installing WordPress database"
-  #/tmp/bin/wp core install --path="./" --url="$WORDPRESSHOSTNAME" --title="$APPLICATION_NAME" --admin_user="$WORDPRESS_USERNAME" --admin_password="$WORDPRESS_PASSWORD" --admin_email="$WORDPRESS_EMAIL"
+  /tmp/bin/wp core install --path="./" --url="$WORDPRESSHOSTNAME" --title="$APPLICATION_NAME" --admin_user="$WORDPRESS_USERNAME" --admin_password="$WORDPRESS_PASSWORD" --admin_email="$WORDPRESS_EMAIL"
 
 
   #if CAWeb theme is available install
-  #if [ -f ./wp-content/themes/CAWeb ]; then
-    # Install CAWeb Theme and activate it
-  #  echo "Installing CAWeb Theme"
-  #  /tmp/bin/wp theme activate CAWeb
-  #fi
+  if [ -f ./wp-content/themes/CAWeb ]; then
+    Install CAWeb Theme and activate it
+   echo "Installing CAWeb Theme"
+   /tmp/bin/wp theme activate CAWeb
+  fi
 
   touch .ransetup
 
