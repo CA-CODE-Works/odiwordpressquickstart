@@ -79,7 +79,7 @@ objects:
       source:
         git:
           ref: 'master'
-          uri: 'https://gitlab.com/castate/odiwordpress'
+          uri: 'https://gitlab.com/castate/odiwordpress.git'
         type: Git
       strategy:
         sourceStrategy:
