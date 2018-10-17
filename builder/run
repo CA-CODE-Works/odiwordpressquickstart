@@ -147,7 +147,7 @@ if [ ! -f .ransetup ]; then
   if [ -f /tmp/bin/wp-content/themes/CAWeb ]; then
     Install CAWeb Theme and activate it
    echo "Installing CAWeb Theme"
-   /tmp/bin/wp theme activate CAWeb
+   /tmp/bin/wp eval 'switch_theme("CAWeb");'
   fi
 
   #add additional customization to install page content
